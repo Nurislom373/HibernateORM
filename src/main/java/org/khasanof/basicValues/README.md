@@ -9,8 +9,8 @@ Additionally, Hibernate provides multiple, flexible ways to indicate how the Jav
 
 <table>
     <tr>
-        <th>Category</th>
-        <th>Package</th>
+        <th width="30%">Category</th>
+        <th width="30%">Package</th>
         <th>Types</th>
     </tr>
     <tr>
