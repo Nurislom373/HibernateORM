@@ -17,7 +17,7 @@ indicated by `jakarta.persistence.EnumType:`
 
 <hr/>
 
-Biz Hibernate Java enumlarni databasega map qilishni turli xil usullarni qo'llab quvvatlaydi. 
+Hibernate Java enumlarni databasega map qilishni turli xil usullarni qo'llab quvvatlaydi. 
 `@Enumerated` yoki `@MapKeyEnumerated `annotatsiyalaridan birdan foydalanib enum qiymatlarni saqlashimiz mumkin.
 EnumType orqali Enum typelarni 2xil ko'rinishda SQL databaselarga saqlashimiz mumkin.
 

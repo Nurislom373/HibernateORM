@@ -271,9 +271,5 @@ public class Types {
     private List<Short> list;
     private SortedSet<Short> sortedSet;
 
-
-
-
-
 }
 
