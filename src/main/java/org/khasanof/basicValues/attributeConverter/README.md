@@ -45,6 +45,10 @@ public class Person {
 
 <hr/>
 
+AttributeConverter ma'lum bir Java Objectni JDBC typega map qilish yani o'zgartirish uchun ishlatiladi.
+JPA Provider tomonidan convertToDatabaseColumn method INSERT yoki UPDATE bayonatini bajarishdan oldin chaqiriladi.
+convertToDatabaseColumn method Object attributeni oladi va tegishli jadval columiga o'rnatilishi kerak bo'lgan qiymatni qaytaradi.
+
 AttributeConverter dan biz ma'lum bir data typimizni databasedagi column moslashtirishimiz uchun foydalanamiz.
 Ushbu tepadgi kodda `Gender` enum converter database char qilib saqlaydi databasedan o'qiyotganda esa `Gender` enum
 aylantiradi. Convert qilmoqchi bo'lgan fieldimizga `@Converter` annotatsiyasini qo'shimiz kerak.

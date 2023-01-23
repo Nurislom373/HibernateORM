@@ -1,32 +1,66 @@
-# AttributeConverter
+# BasicValues
 
-AttributeConverter ma'lum bir Java Objectni JDBC typega map qilish yani o'zgartirish uchun ishlatiladi.
-JPA Provider tomonidan convertToDatabaseColumn method INSERT yoki UPDATE bayonatini bajarishdan oldin chaqiriladi.
-convertToDatabaseColumn method Object attributeni oladi va tegishli jadval columiga o'rnatilishi kerak bo'lgan qiymatni qaytaradi. 
+A basic type is a mapping between a Java type and a single database column.
 
-# Basic Annotation
+Hibernate can map many standard Java types (Integer, String, etc.) as basic types. The mapping for many come from tables
+B-3 and B-4 in the JDBC specification[jdbc]. Others (URL as VARCHAR, e.g.) simply make sense.
 
-Basic Annotatsiyasi 2ta atributni o'z ichiga oladi.
+Additionally, Hibernate provides multiple, flexible ways to indicate how the Java type should be mapped to the database.
 
-- <strong>optional</strong> - boolean (defaults to true)
-Ushbu atribut nulllarga ruxsat beradimi yoki yo'qligini aniqlaydi.
-- <strong>fetch</strong> - FetchType (defaults to EAGER)
-Bu atribut qiymatni EAGER yoki LAZY olish kerakligini aniqlaydi.
-
-# Formula Annotation
-
-# Column Annotation
-
-# Types
-
-### BLOB and CLOB types
-
-+ BLOB - Stores any kind of data in binary format. Typically used for multimedia files such as images and videos.
-+ CLOB - Used for large strings or documents that use the database character set exclusively.
-+ NCLOB - Stores string data in National Character Set format.
-
-<hr/>
-
-+ BLOB - data type har qanday ma'lumotlarni binary formatda saqlaydi. Odat Rasm va Video kabi filelar saqlash uchun ishlatiladi.
-+ CLOB - data type katta stringlarni yoki documentlarni saqlash uchun ishlatiladi.
-+ NCLOB - data type National characterlardan iborat stringlarni saqlaydi.
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Package</th>
+        <th>Types</th>
+    </tr>
+    <tr>
+        <td>Java primitive types</td>
+        <td> </td>
+        <td>boolean, int, double, etc.</td>
+    </tr>
+    <tr>
+        <td>Primitive wrappers</td>
+        <td>java.lang</td>
+        <td>Boolean, Integer, Double, etc.</td>
+    </tr>
+    <tr>
+        <td>Strings</td>
+        <td>java.lang</td>
+        <td>String</td>
+    </tr>
+    <tr>
+        <td>Arbitrary-precision numeric types</td>
+        <td>java.math</td>
+        <td>BigInteger and BigDecimal</td>
+    </tr>
+    <tr>
+        <td>Date/time types</td>
+        <td>java.time</td>
+        <td>LocalDate, LocalTime, LocalDateTime, OffsetTime, OffsetDateTime, Instant</td>
+    </tr>
+    <tr>
+        <td>Deprecated date/time types</td>
+        <td>java.util</td>
+        <td>Date and Calendar</td>
+    </tr>
+    <tr>
+        <td>Deprecated date/time types from</td>
+        <td>java.sql</td>
+        <td>Date, Time, Timestamp</td>
+    </tr>
+    <tr>
+        <td>Byte and character arrays</td>
+        <td> </td>
+        <td>byte[] or Byte[], char[] or Character[]</td>
+    </tr>
+    <tr>
+        <td>Java enumerated types</td>
+        <td> </td>
+        <td>Any enum</td>
+    </tr>
+    <tr>
+        <td>Serializable types</td>
+        <td> </td>
+        <td>Any type that implements java.io.Serializable</td>
+    </tr>
+</table>

@@ -21,10 +21,10 @@ public class Car implements Serializable {
     @Column(name = "id", nullable = false, updatable = false, unique = true, length = 11)
     private int id;
 
-    @Column(name = "model", nullable = false, length = 120)
+    @Column(name = "model", nullable = false, length = 120, columnDefinition = "varchar(255) defaults 'BMW M4'")
     private String model;
 
-    @Column(name = "price", nullable = false, length = 10)
+    @Column(name = "price", nullable = false, length = 10, columnDefinition = "integer defaults 120000")
     private Long price;
 
     private LocalDate date;
