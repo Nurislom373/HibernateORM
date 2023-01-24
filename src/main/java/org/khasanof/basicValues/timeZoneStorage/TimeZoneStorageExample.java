@@ -8,6 +8,7 @@ import org.hibernate.annotations.TimeZoneStorageType;
 
 import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
+import java.util.BitSet;
 
 /**
  * Author: Nurislom

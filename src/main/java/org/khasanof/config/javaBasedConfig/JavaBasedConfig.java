@@ -9,6 +9,7 @@ import org.khasanof.basicValues.attributeConverter.Person;
 import org.khasanof.basicValues.basicAnnotation.Product;
 import org.khasanof.basicValues.formulaAnnotation.Account;
 import org.khasanof.basicValues.formulaAnnotation.Author;
+import org.khasanof.basicValues.jdbcTypeCodeAnnotation.JdbcTypeCodeExample;
 import org.khasanof.basicValues.temporalAnnotation.TemporalExample;
 import org.khasanof.basicValues.timeZoneStorage.TimeZoneStorageExample;
 import org.khasanof.introduction.entity.AuthUserEntity;
@@ -44,6 +45,7 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(TemporalExample.class);
         configuration.addAnnotatedClass(TimeZoneStorageExample.class);
+        configuration.addAnnotatedClass(JdbcTypeCodeExample.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
