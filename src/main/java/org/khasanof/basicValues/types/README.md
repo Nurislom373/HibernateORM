@@ -37,3 +37,7 @@ EnumType orqali Enum typelarni 2xil ko'rinishda SQL databaselarga saqlashimiz mu
 + BLOB - data type har qanday ma'lumotlarni binary formatda saqlaydi. Odat Rasm va Video kabi filelar saqlash uchun ishlatiladi.
 + CLOB - data type katta stringlarni yoki documentlarni saqlash uchun ishlatiladi.
 + NCLOB - data type National characterlardan iborat stringlarni saqlaydi.
+
+### 
+
+@Temporal annotatsiyasi Time, Date, Timestamp classlarni SQL typega aylantirish uchun ishlatiladi.
