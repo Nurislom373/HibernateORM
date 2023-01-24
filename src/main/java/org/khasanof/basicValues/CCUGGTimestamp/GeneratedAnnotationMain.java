@@ -10,29 +10,26 @@ import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
  * <br/>
  * Date: 1/24/2023
  * <br/>
- * Time: 8:06 PM
+ * Time: 9:08 PM
  * <br/>
  * Package: org.khasanof.basicValues.CCUGGTimestamp
  */
-public class UpdateTimestampAnnotationMain {
+public class GeneratedAnnotationMain {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory = JavaBasedConfig.getSessionFactory();
 
         try (Session session = sessionFactory.openSession()) {
-
             Transaction transaction = session.beginTransaction();
 
-            var updateTimestampAnnotationExample = new UpdateTimestampAnnotationExample();
-            updateTimestampAnnotationExample.setUpdatedBy("Nurislom");
-
-            session.persist(updateTimestampAnnotationExample);
+            var generatedAnnotationExample = new GeneratedAnnotationExample("Nurislom", "Xasanov");
+            session.persist(generatedAnnotationExample);
 
             transaction.commit();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 }

@@ -5,9 +5,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import org.khasanof.basicValues.CCUGGTimestamp.CreationTimestampAnnotationExample;
-import org.khasanof.basicValues.CCUGGTimestamp.CurrentTimestampAnnotationExample;
-import org.khasanof.basicValues.CCUGGTimestamp.UpdateTimestampAnnotationExample;
+import org.khasanof.basicValues.CCUGGTimestamp.*;
 import org.khasanof.basicValues.attributeConverter.Person;
 import org.khasanof.basicValues.basicAnnotation.Product;
 import org.khasanof.basicValues.formulaAnnotation.Account;
@@ -52,6 +50,8 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(CurrentTimestampAnnotationExample.class);
         configuration.addAnnotatedClass(CreationTimestampAnnotationExample.class);
         configuration.addAnnotatedClass(UpdateTimestampAnnotationExample.class);
+        configuration.addAnnotatedClass(GeneratedAnnotationExample.class);
+        configuration.addAnnotatedClass(CustomGeneratedAnnotationExample.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

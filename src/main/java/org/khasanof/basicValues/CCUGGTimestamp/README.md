@@ -1,5 +1,12 @@
 # Generated Properties
 
+## @GeneratedUuidValue
+
+Hibernate also supports value generation via a pluggable API using @ValueGenerationType and AnnotationValueGeneration 
+allowing users to define any generation strategy they wish.
+
+Let’s look at an example of generating UUID values. First the attribute mapping
+
 ## @UpdateTimestamp
 
 The `@UpdateTimestamp` annotation is an in-VM INSERT strategy.
