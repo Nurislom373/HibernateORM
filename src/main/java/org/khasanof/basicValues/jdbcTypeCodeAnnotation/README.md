@@ -1,0 +1,1 @@
+# @JdbcTypeCode annotation

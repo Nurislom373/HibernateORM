@@ -3,11 +3,8 @@ package org.khasanof.basicValues.jdbcTypeCodeAnnotation;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
-import org.hibernate.annotations.JavaType;
 import org.hibernate.annotations.JavaTypeRegistration;
 import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.descriptor.java.InstantJavaType;
-import org.hibernate.type.descriptor.java.IntegerJavaType;
 import org.hibernate.type.descriptor.java.StringJavaType;
 
 import java.sql.Types;
@@ -34,9 +31,6 @@ public class JdbcTypeCodeExample {
     @Id
     private Integer id;
 
-    /*
-
-     */
     @JdbcTypeCode(Types.VARBINARY)
     private BitSet bitSet;
 
