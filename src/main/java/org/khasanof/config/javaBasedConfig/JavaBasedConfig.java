@@ -5,15 +5,15 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import org.khasanof.basicValues.CCUGGTimestamp.*;
-import org.khasanof.basicValues.attributeConverter.Person;
-import org.khasanof.basicValues.basicAnnotation.Product;
-import org.khasanof.basicValues.columnTransformer.ColumnTransformerExample;
-import org.khasanof.basicValues.formulaAnnotation.Account;
-import org.khasanof.basicValues.formulaAnnotation.Author;
-import org.khasanof.basicValues.jdbcTypeCodeAnnotation.JdbcTypeCodeExample;
-import org.khasanof.basicValues.temporalAnnotation.TemporalExample;
-import org.khasanof.basicValues.timeZoneStorage.TimeZoneStorageExample;
+import org.khasanof.domainModel.basicValues.CCUGGTimestamp.*;
+import org.khasanof.domainModel.basicValues.attributeConverter.Person;
+import org.khasanof.domainModel.basicValues.basicAnnotation.Product;
+import org.khasanof.domainModel.basicValues.formulaAnnotation.Account;
+import org.khasanof.domainModel.basicValues.formulaAnnotation.Author;
+import org.khasanof.domainModel.basicValues.jdbcTypeCodeAnnotation.JdbcTypeCodeExample;
+import org.khasanof.domainModel.basicValues.temporalAnnotation.TemporalExample;
+import org.khasanof.domainModel.basicValues.timeZoneStorage.TimeZoneStorageExample;
+import org.khasanof.domainModel.embeddableValues.componentEmbedded.ComponentEmbeddedExample;
 import org.khasanof.introduction.entity.AuthUserEntity;
 
 import java.util.Properties;
@@ -53,7 +53,7 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(UpdateTimestampAnnotationExample.class);
         configuration.addAnnotatedClass(GeneratedAnnotationExample.class);
         configuration.addAnnotatedClass(CustomGeneratedAnnotationExample.class);
-        configuration.addAnnotatedClass(ColumnTransformerExample.class);
+        configuration.addAnnotatedClass(ComponentEmbeddedExample.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
