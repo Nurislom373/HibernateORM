@@ -14,6 +14,8 @@ import org.khasanof.domainModel.basicValues.jdbcTypeCodeAnnotation.JdbcTypeCodeE
 import org.khasanof.domainModel.basicValues.temporalAnnotation.TemporalExample;
 import org.khasanof.domainModel.basicValues.timeZoneStorage.TimeZoneStorageExample;
 import org.khasanof.domainModel.embeddableValues.componentEmbedded.ComponentEmbeddedExample;
+import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.Country;
+import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.OvrEmbedTypesExample;
 import org.khasanof.introduction.entity.AuthUserEntity;
 
 import java.util.Properties;
@@ -54,6 +56,8 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(GeneratedAnnotationExample.class);
         configuration.addAnnotatedClass(CustomGeneratedAnnotationExample.class);
         configuration.addAnnotatedClass(ComponentEmbeddedExample.class);
+        configuration.addAnnotatedClass(OvrEmbedTypesExample.class);
+        configuration.addAnnotatedClass(Country.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

@@ -18,7 +18,7 @@ import lombok.*;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "ov_embed_types")
+@Entity(name = "ovr_embed_types")
 @AttributeOverrides({
         @AttributeOverride(
                 name = "ebookPublisher.name",
@@ -55,4 +55,10 @@ public class OvrEmbedTypesExample {
 
     private Publisher paperBackPublisher;
 
+    public OvrEmbedTypesExample(String title, String author, Publisher ebookPublisher, Publisher paperBackPublisher) {
+        this.title = title;
+        this.author = author;
+        this.ebookPublisher = ebookPublisher;
+        this.paperBackPublisher = paperBackPublisher;
+    }
 }

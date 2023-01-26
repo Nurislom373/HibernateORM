@@ -7,6 +7,9 @@ type into another entity.
 
 <hr/>
 
+embeddable xususiyatlarni o'z ichiga olgan bitta ob'ektni bitta
+ma'lumotlar bazasi jadvaliga map qilish uchun ishlatamiz.
+
 Ko'pincha embeddable classlar bir nechta asosiy typelar guruhini bir nechta entitylarga 
 map qilib qayta ishlatilsh uchun ishlatiladi.
 
