@@ -2,6 +2,7 @@ package org.khasanof.domainModel.embeddableValues.componentEmbedded;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Target;
 
 /**
  * Author: Nurislom
