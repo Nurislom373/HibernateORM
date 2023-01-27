@@ -8,8 +8,8 @@ However, for simple embeddable types, there is no such construct and so you need
 
 <hr/>
 
-@Target annotatsiyasi interface orqali mapped qilingan associationning amal(impl)ga oshirish classni belgilash uchun ishlatiladi.
-Mapped - boshqa qilib aytganda bir biri bilan bog'langan. 
+@Target annotatsiyasi interface orqali map qilingan associationning amal(impl)ga oshirish classni belgilash uchun ishlatiladi.
+Map - boshqa qilib aytganda bir biri bilan bog'langan. 
 
 @MantToOne, @OneToOne, @OneToMany, @ManyToMany annotatsiyalarni map qilish uchun interfacedan foydalanilganda object 
 assotsiatsiyaning haqiqiy classini belgilash uchun targetEntity atributiga ega.
