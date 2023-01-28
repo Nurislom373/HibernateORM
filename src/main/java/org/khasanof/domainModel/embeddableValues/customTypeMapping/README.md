@@ -21,5 +21,5 @@ There are a few ways to specify the composite user type. The @org.hibernate.anno
 
 <hr/>
 
-Java CustomName classida faqat konstructor orqali statelarni to'ldira olamiz. Usbu class Java Bean conventionsitsiyasiga rioya
-qilmagani uchun, uning instance yaratish va statega kirish uchun maxsus type kerak.
+Java CustomName classida faqat konstructor orqali statelarni to'ldira olamiz. Ushbu class Java Bean conventionsitsiyasiga rioya
+qilmagani uchun, uning instance yaratish va statega kirish uchun maxsus type kerak. 

@@ -8,7 +8,7 @@ When an embeddable type is used multiple times, Jakarta Persistence defines the 
 
 <hr/>
 
-Ob'ektga yo'naltirilgan dasturlash nuqtai nazardan, embeddable typelar bilan ishlash ancha qulayroq bo'lsa-da, biz bir xil embeddabledan bir xil sinfda bir necha marta foydalansak, Jakarta Persistence spetsifikatsiyasi bog'langan column nomlarini aniq belgilashni talab qiladi.
+Ob'ektga yo'naltirilgan dasturlash nuqtai nazardan, embeddable typelar bilan ishlash ancha qulayroq bo'lsa-da, biz bir xil embeddabledan bir xil classda bir necha marta foydalansak, Jakarta Persistence spetsifikatsiyasi bog'langan column nomlarini aniq belgilashni talab qiladi.
 
 Publisher classidagi name field bor biz ushbu fieldni ebook_pub_name ga aylantirib database saqlanishini hohlaymiz.
 Buni amalga oshirish uchun embeddable classini propertieslarni qilishimiz kerak.
