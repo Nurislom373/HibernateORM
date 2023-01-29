@@ -12,10 +12,10 @@ transitions on the ETAccount, ETAccountTransaction and ETClient entities before 
 
 <hr/>
 
-@Subselect annotatsiyasidan foydalangan holda query qaytgan resultni entityga solishtirish(map)imiz qilishimiz mumkin.
+@Subselect annotatsiyasidan foydalangan holda query qaytgan resultni entityga solishtirishimiz(map) qilishimiz mumkin.
 
 hech qanday yozish operatsiyalarni uchun ushbu entitydan foydalana olmaymiz. Hibernate @Subselect annotatsiyasni tomonidan
 taqdim etilgan SQL queryni bajaradi. 
 
-Hibernate @Subselect annotatsiyasidagi SQl queryni qaysi tablelar bilan ishlatishni bilmaydi. Qaysi tablelar bilan ishlash
+Hibernate @Subselect annotatsiyasidagi SQL queryni qaysi tablelar bilan ishlatishni bilmaydi. Qaysi tablelar bilan ishlash
 kerakligini @Sychronize annotatsiyasi bilan orqali taqdim etishimiz mumkin.
