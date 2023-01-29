@@ -15,8 +15,8 @@ import org.hibernate.annotations.Synchronize;
  * <br/>
  * Package: org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery
  */
-@Getter
 @Setter
+@Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor

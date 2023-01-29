@@ -18,6 +18,10 @@ import org.khasanof.domainModel.embeddableValues.customTypeMapping.CustomTypeMap
 import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.Country;
 import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.OvrEmbedTypesExample;
 import org.khasanof.domainModel.embeddableValues.targetAnnoatation.TargetAnnExample;
+import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETAccount;
+import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETAccountTransaction;
+import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETClient;
+import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETSQLQueryEntity;
 import org.khasanof.introduction.entity.AuthUserEntity;
 
 import java.util.Properties;
@@ -62,6 +66,10 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(Country.class);
         configuration.addAnnotatedClass(TargetAnnExample.class);
         configuration.addAnnotatedClass(CustomTypeMappingExample.class);
+        configuration.addAnnotatedClass(ETAccount.class);
+        configuration.addAnnotatedClass(ETAccountTransaction.class);
+        configuration.addAnnotatedClass(ETClient.class);
+        configuration.addAnnotatedClass(ETSQLQueryEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
