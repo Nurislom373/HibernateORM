@@ -32,7 +32,7 @@ public class SimpleIdentifierMain {
     static void sve(Session session) {
         Transaction transaction = session.beginTransaction();
 
-        var simple = new SimpleIdentifiersGenExample("Lorem Ipsum", "Nurislom");
+        var simple = new SimpleIdentifiersGenExample();
         session.persist(simple);
 
         transaction.commit();
