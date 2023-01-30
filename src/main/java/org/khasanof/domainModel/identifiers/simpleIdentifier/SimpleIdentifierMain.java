@@ -1,27 +1,29 @@
-package org.khasanof.domainModel.entityTypes.persisterAnnotation;
+package org.khasanof.domainModel.identifiers.simpleIdentifier;
 
-import jakarta.persistence.Access;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
 
+import java.util.List;
+
 /**
  * Author: Nurislom
  * <br/>
- * Date: 1/29/2023
+ * Date: 1/30/2023
  * <br/>
- * Time: 7:44 PM
+ * Time: 9:12 PM
  * <br/>
- * Package: org.khasanof.domainModel.entityTypes.persisterAnnotation
+ * Package: org.khasanof.domainModel.identifiers.simpleIdentifier
  */
-public class PersisterAnnMain {
+public class SimpleIdentifierMain {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory = JavaBasedConfig.getSessionFactory();
 
         try (Session session = sessionFactory.openSession()) {
-
+            sve(session);
+            lst(session);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,8 +32,16 @@ public class PersisterAnnMain {
     static void sve(Session session) {
         Transaction transaction = session.beginTransaction();
 
-
+        var simple = new SimpleIdentifiersGenExample("Lorem Ipsum", "Nurislom");
+        session.persist(simple);
 
         transaction.commit();
+    }
+
+    static void lst(Session session) {
+        var list = session.createQuery("FROM simple_identifiers_gen_exm")
+                .list();
+
+        System.out.println("list = " + list);
     }
 }
