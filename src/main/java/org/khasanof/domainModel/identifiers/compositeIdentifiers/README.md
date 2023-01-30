@@ -22,3 +22,22 @@ primary key class bir nechta shartlarga javob berishi kerak:
 + Ushbu class public va `Serializable` interfaceni amalga oshirgan bo'lishi kerak. Hamda public no-arg constructori 
 bo'lishi kerak.
 + `equals()` va `hashCode()` methodlarni impl qilgan bolishi ham kerak.
+
+### @EmbeddedId 
+
+@Embeddable qoyilgan classni boshqa bir classni ichida e'lon qilin primary key sifatida ishlatsak bo'ladi.
+Uning uchun @EmbeddedId annotatsiyasidan foydalangan amalga oshirishimiz mumkin.
+
+```java
+@Entity
+public class OrderEntry {
+
+    @EmbeddedId
+    private OrderEntryPK entryId;
+
+    // ...
+}
+```
+
+### @IdClass
+
