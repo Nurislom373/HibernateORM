@@ -69,6 +69,19 @@ public class SimpleIdentifiersGenExample {
     )
     private int sequenceIdentifier;
 
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "sequence-generator"
+    )
+    @SequenceGenerator(
+            name = "sequence-generator",
+            sequenceName = "explicit_product_sequence",
+            allocationSize = 5
+    )
+    private Long sequenceId;
+
+
     /*
         TABLE Generation
 
