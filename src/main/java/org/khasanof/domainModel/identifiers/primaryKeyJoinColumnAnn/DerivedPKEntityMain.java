@@ -1,4 +1,4 @@
-package org.khasanof.domainModel.identifiers.derivedIdentifiers;
+package org.khasanof.domainModel.identifiers.primaryKeyJoinColumnAnn;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,13 +10,13 @@ import java.util.List;
 /**
  * Author: Nurislom
  * <br/>
- * Date: 1/31/2023
+ * Date: 2/1/2023
  * <br/>
- * Time: 11:30 PM
+ * Time: 6:57 PM
  * <br/>
  * Package: org.khasanof.domainModel.identifiers.derivedIdentifiers
  */
-public class DerivedIdnMain {
+public class DerivedPKEntityMain {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory = JavaBasedConfig.getSessionFactory();
@@ -32,20 +32,19 @@ public class DerivedIdnMain {
     static void sve(Session session) {
         Transaction transaction = session.beginTransaction();
 
-        DerivedIdn idn = new DerivedIdn(1L, "fdubsfjdbs");
-        session.persist(idn);
+        DerivedPKEntity pkEntity = new DerivedPKEntity(2L, "+785745376347543");
+        session.persist(pkEntity);
 
-        DerivedIdnDetails details = new DerivedIdnDetails(1L, "khasanof", idn);
-        session.persist(details);
+        DerivedPKDetailsEntity pkDetails = new DerivedPKDetailsEntity(3L, "fjdsvhfvdhsg", pkEntity);
+        session.persist(pkDetails);
 
         transaction.commit();
     }
 
     static void lst(Session session) {
-        List<DerivedIdnDetails> list = session.createQuery("FROM derived_idn_details",
-                        DerivedIdnDetails.class).list();
+        List<DerivedPKDetailsEntity> list = session.createQuery("FROM derived_pk_details_entity",
+                DerivedPKDetailsEntity.class).list();
 
         System.out.println("list = " + list);
     }
-
 }

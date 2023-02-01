@@ -22,11 +22,10 @@ import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETAccount
 import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETAccountTransaction;
 import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETClient;
 import org.khasanof.domainModel.entityTypes.mappingTheEntityToSQLQuery.ETSQLQueryEntity;
-import org.khasanof.domainModel.entityTypes.persisterAnnotation.ETPersisterEntity;
-import org.khasanof.domainModel.entityTypes.persisterAnnotation.PersisterAnnExample;
-import org.khasanof.domainModel.identifiers.compositeIdentifiers.OrderEntry;
-import org.khasanof.domainModel.identifiers.customIdentifiers.MyGenEntity;
-import org.khasanof.domainModel.identifiers.simpleIdentifier.SimpleIdentifiersGenExample;
+import org.khasanof.domainModel.identifiers.derivedIdentifiers.DerivedIdn;
+import org.khasanof.domainModel.identifiers.derivedIdentifiers.DerivedIdnDetails;
+import org.khasanof.domainModel.identifiers.primaryKeyJoinColumnAnn.DerivedPKDetailsEntity;
+import org.khasanof.domainModel.identifiers.primaryKeyJoinColumnAnn.DerivedPKEntity;
 import org.khasanof.introduction.entity.AuthUserEntity;
 
 import java.util.Properties;
@@ -75,7 +74,10 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(ETAccountTransaction.class);
         configuration.addAnnotatedClass(ETClient.class);
         configuration.addAnnotatedClass(ETSQLQueryEntity.class);
-        configuration.addAnnotatedClass(MyGenEntity.class);
+        configuration.addAnnotatedClass(DerivedIdn.class);
+        configuration.addAnnotatedClass(DerivedIdnDetails.class);
+        configuration.addAnnotatedClass(DerivedPKEntity.class);
+        configuration.addAnnotatedClass(DerivedPKDetailsEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
