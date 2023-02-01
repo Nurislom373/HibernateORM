@@ -8,7 +8,8 @@ which you want to customize the mapping of the foreign key column.
 
 Ushbu annotatsiyadan foydalanib entity bir birga bog'lasak SELECT qilayotgan paytimizda 2 ta tableni bir biriga join
 qilgan holda entityni bizga beradi. Agar biz @JoinColumn foydalanganimizda foriegn key orqali 2ta table bir biriga
-ulagan bo'lardik. Ushbu @PrimaryKeyJoinColumn annotatsiya esa join orqali bizga kerak entity qaytaradi.
+ulagan entity olardik. @PrimaryKeyJoinColumn annotatsiya esa join orqali biriga bog'langan entity qaytaradi join orqali
+2ta boshqa table primary key orqali biriga join qilinadi.
 
 ```java
 

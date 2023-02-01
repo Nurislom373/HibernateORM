@@ -26,6 +26,8 @@ import org.khasanof.domainModel.identifiers.derivedIdentifiers.DerivedIdn;
 import org.khasanof.domainModel.identifiers.derivedIdentifiers.DerivedIdnDetails;
 import org.khasanof.domainModel.identifiers.primaryKeyJoinColumnAnn.DerivedPKDetailsEntity;
 import org.khasanof.domainModel.identifiers.primaryKeyJoinColumnAnn.DerivedPKEntity;
+import org.khasanof.extra.orderByAnnotation.OBAuthor;
+import org.khasanof.extra.orderByAnnotation.OBBook;
 import org.khasanof.introduction.entity.AuthUserEntity;
 
 import java.util.Properties;
@@ -78,6 +80,8 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(DerivedIdnDetails.class);
         configuration.addAnnotatedClass(DerivedPKEntity.class);
         configuration.addAnnotatedClass(DerivedPKDetailsEntity.class);
+        configuration.addAnnotatedClass(OBAuthor.class);
+        configuration.addAnnotatedClass(OBBook.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

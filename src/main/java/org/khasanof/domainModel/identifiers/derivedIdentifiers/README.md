@@ -13,7 +13,7 @@ assotsiatsiyani xaritalashim kerak. Buni JPA yoki Hibernate bilan qanday qilishi
 ### JPA @MapsId
 
 @MapsId Annotatsiyasi bir entityni primary keyni boshqa bir entityning primary key sifatida ishlatimoqchi bo'lganimizda
-foydalanaishimiz mumkin.
+foydalanaishimiz mumkin. 
 
 <hr/>
 
