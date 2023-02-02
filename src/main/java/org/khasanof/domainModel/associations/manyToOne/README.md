@@ -1,4 +1,4 @@
-# @ManyToOne Annotation
+# ManyToOne Association
 
 The @ManyToOne relationship is the most common JPA association and it maps exactly to the oneto-many table relationship.
 When using a @ManyToOne association, the underlying foreign key is controlled by the child-side, no matter the
@@ -18,7 +18,6 @@ Many-to-one shuni anglatadiki, bu entityning ko'p nusxalari boshqa entityning bi
 Misol uchun: bir nechta telefon raqamlari bitta odam tegishli.
 
 ```java
-
 @Entity
 @Table(name = "mto_person", schema = "association")
 public class MTOPerson {
@@ -34,7 +33,6 @@ public class MTOPerson {
 ```
 
 ```java
-
 @Entity
 @Table(name = "mto_phone", schema = "association")
 public class MTOPhone {
@@ -44,6 +42,12 @@ public class MTOPhone {
     private Integer id;
 
     private String number;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id",
+            foreignKey = @ForeignKey(name = "PERSON_ID_FK")
+    )
+    private MTOPerson person;
 
     // ...
 }

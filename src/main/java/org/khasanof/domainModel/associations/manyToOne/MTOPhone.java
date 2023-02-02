@@ -1,4 +1,4 @@
-package org.khasanof.domainModel.associations.manyToOneAnnotation;
+package org.khasanof.domainModel.associations.manyToOne;
 
 import jakarta.persistence.*;
 import lombok.*;

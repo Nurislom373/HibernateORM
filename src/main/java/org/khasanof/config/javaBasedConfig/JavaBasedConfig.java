@@ -5,8 +5,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import org.khasanof.domainModel.associations.manyToOneAnnotation.MTOPerson;
-import org.khasanof.domainModel.associations.manyToOneAnnotation.MTOPhone;
+import org.khasanof.domainModel.associations.manyToOne.MTOPerson;
+import org.khasanof.domainModel.associations.manyToOne.MTOPhone;
+import org.khasanof.domainModel.associations.oneToMany.OTMAccountEntity;
+import org.khasanof.domainModel.associations.oneToMany.OTMEmployeeEntity;
+import org.khasanof.domainModel.associations.oneToMany.OTMPerson;
+import org.khasanof.domainModel.associations.oneToMany.OTMPhone;
 import org.khasanof.domainModel.basicValues.CCUGGTimestamp.*;
 import org.khasanof.domainModel.basicValues.attributeConverter.Person;
 import org.khasanof.domainModel.basicValues.basicAnnotation.Product;
@@ -86,6 +90,10 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(OBBook.class);
         configuration.addAnnotatedClass(MTOPerson.class);
         configuration.addAnnotatedClass(MTOPhone.class);
+        configuration.addAnnotatedClass(OTMPerson.class);
+        configuration.addAnnotatedClass(OTMPhone.class);
+        configuration.addAnnotatedClass(OTMAccountEntity.class);
+        configuration.addAnnotatedClass(OTMEmployeeEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

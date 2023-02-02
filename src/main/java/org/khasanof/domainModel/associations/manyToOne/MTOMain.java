@@ -1,11 +1,9 @@
-package org.khasanof.domainModel.associations.manyToOneAnnotation;
+package org.khasanof.domainModel.associations.manyToOne;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
-
-import java.util.List;
 
 /**
  * Author: Nurislom
