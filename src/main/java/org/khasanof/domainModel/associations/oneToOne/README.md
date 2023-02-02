@@ -15,6 +15,8 @@ manziliga ega bo'ladi va pochta manzilida faqat bitta foydalanuvchi bog'langan b
 
 Bu foydalanuvchi va manzil entitylari o'rtasidagi yakkama-yakka munosabatlarga misoldir.
 
+## Unidirectional
+
 ```java
 @Getter
 @Setter
@@ -66,6 +68,75 @@ public class OTOUniPhoneDetailsEntity {
     @Column(name = "technology", nullable = false)
     private String technology;
     
+    // ...
+}
+```
+
+### Bidirectional
+
+```java
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "oto_bid_phone_en", schema = "association", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "id")
+})
+public class OTOBidPhoneEntity {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "id", nullable = false, updatable = false)
+    private Integer id;
+
+    @Column(name = "number")
+    private String number;
+
+    @OneToOne(mappedBy = "phone", cascade = CascadeType.ALL,
+            orphanRemoval = true, fetch = FetchType.LAZY)
+    private OTOBidPhoneDetailsEntity details;
+
+    public void addDetails(OTOBidPhoneDetailsEntity entity) {
+        entity.setPhone(this);
+        this.details = entity;
+    }
+
+    public void remove() {
+        if (details != null) {
+            details.setPhone(null);
+            this.details = null;
+        }
+    }
+    
+    // ...
+}
+
+```
+
+```java
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "oto_bid_phone_details_en", schema = "association", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "id")
+})
+public class OTOBidPhoneDetailsEntity {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "id", nullable = false, updatable = false)
+    private Integer id;
+
+    private String provider;
+    private String technology;
+
+    @OneToOne
+    @JoinColumn(name = "phone_id")
+    private OTOBidPhoneEntity phone;
+
     // ...
 }
 ```
