@@ -11,6 +11,10 @@ import org.khasanof.domainModel.associations.oneToMany.OTMAccountEntity;
 import org.khasanof.domainModel.associations.oneToMany.OTMEmployeeEntity;
 import org.khasanof.domainModel.associations.oneToMany.OTMPerson;
 import org.khasanof.domainModel.associations.oneToMany.OTMPhone;
+import org.khasanof.domainModel.associations.oneToOne.OTOBidPhoneDetailsEntity;
+import org.khasanof.domainModel.associations.oneToOne.OTOBidPhoneEntity;
+import org.khasanof.domainModel.associations.oneToOne.OTOUniPhoneDetailsEntity;
+import org.khasanof.domainModel.associations.oneToOne.OTOUniPhoneEntity;
 import org.khasanof.domainModel.basicValues.CCUGGTimestamp.*;
 import org.khasanof.domainModel.basicValues.attributeConverter.Person;
 import org.khasanof.domainModel.basicValues.basicAnnotation.Product;
@@ -94,6 +98,10 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(OTMPhone.class);
         configuration.addAnnotatedClass(OTMAccountEntity.class);
         configuration.addAnnotatedClass(OTMEmployeeEntity.class);
+        configuration.addAnnotatedClass(OTOUniPhoneEntity.class);
+        configuration.addAnnotatedClass(OTOUniPhoneDetailsEntity.class);
+        configuration.addAnnotatedClass(OTOBidPhoneDetailsEntity.class);
+        configuration.addAnnotatedClass(OTOBidPhoneEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
