@@ -61,7 +61,7 @@ By default, Hibernate maps values of `Byte` / `byte` to the `TINYINT` JDBC type.
 ```java
 // Hibernate Byte/byte JDBC TINYINT typega aylantirib saqlab ketadi.
 Byte wrapperByte;
-        byte primitiveByte;
+byte primitiveByte;
 ```
 
 ## Short
@@ -71,7 +71,7 @@ By default, Hibernate maps values of `Short` / `short` to the `SMALLINT` JDBC ty
 ```java
 // Hibernate Short/short JDBC SMALLINT typega aylantirib saqlab ketadi.
 Short wrapperShort;
-        short primitiveShort;
+short primitiveShort;
 ```
 
 ## Integer
@@ -81,7 +81,7 @@ By default, Hibernate maps values of `Integer` / `int` to the `INTEGER` JDBC typ
 ```java
 // Hibernate Integer/int JDBC INTEGER typega aylantiribi saqlab ketadi.
 Integer wrapperInteger;
-        int primitiveInteger;
+int primitiveInteger;
 ```
 
 ## Long
@@ -91,7 +91,7 @@ By default, Hibernate maps values of `Long` / `long` to the `BIGINT` JDBC type.
 ```java
 // Hibernate Long/long JDBC BIGINT typega aylantirib saqlab ketadi.
 Long wrapperLong;
-        long primitiveLong;
+long primitiveLong;
 ```
 
 ## BigInteger
@@ -111,7 +111,7 @@ capabilities of the database
 ```java
 // Hibernate Double/double JDBC DOUBLE, FLOAT, REAl yoki NUMERIC lardan biriga aylantirib saqlab ketadi.
 Double wrapperDouble;
-        double primitiveDouble;
+double primitiveDouble;
 ```
 
 A specific type can be influenced using any of the JDBC type influencers covered in [basic-mapping-explicit] section.
@@ -127,7 +127,7 @@ database.
 ```java
 // Hibernate Float/float JDBC FLOAT, REAL yoki NUMERIC lardan biriga aylantirib saqlab ketadi.
 Float wrapperFloat;
-        float primitiveFloat;
+float primitiveFloat;
 ```
 
 ## BigDecimal
@@ -146,7 +146,7 @@ By default, Hibernate maps `Character` to the `CHAR` JDBC type.
 ```java
 // Character JDBC CHAR ga aylantirib saqlab ketadi.
 Character wrapperCharacter;
-        char primitiveCharacter;
+char primitiveCharacter;
 ```
 
 ## String
@@ -190,7 +190,7 @@ By default, Hibernate maps `Character[]` and `char[]` to the VARCHAR JDBC type.
 // Hibernate Character[]/char[] JDBC VARCHAR ga aylantirib saqlab ketadi.
 // @Lob annotatsiyasidan foydalangan holda CLOB aylantirib saqlab ketishimiz mumkin.
 Character[]wrapperCharSequence;
-        char[]primitiveCharSequence;
+char[]primitiveCharSequence;
 ```
 
 ## Byte Array
@@ -335,7 +335,7 @@ Hibernate maps `Class`, `Currency` and `Locale` references to `VARCHAR` JDBC typ
 
 ```java
 /*
-        Ushbu pastda e'lon qilingan 3ta classlarni Hibernate VARCHAR ga aylantirib saqlab ketadi.
+  Ushbu pastda e'lon qilingan 3ta classlarni Hibernate VARCHAR ga aylantirib saqlab ketadi.
 */
 private Class<?> clazz;
 private Currency currency;
