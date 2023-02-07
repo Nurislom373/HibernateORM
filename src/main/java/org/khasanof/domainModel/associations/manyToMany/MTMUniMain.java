@@ -5,6 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Author: Nurislom
  * <br/>
@@ -28,7 +31,10 @@ public class MTMUniMain {
     }
 
     private static void lst(Session session) {
+        var list = session.createQuery("FROM MTMUniPersonEntity ", MTMUniPersonEntity.class)
+                .list();
 
+        System.out.println("list = " + list);
     }
 
     private static void sve(Session session) {
@@ -40,15 +46,22 @@ public class MTMUniMain {
         var address1 = new MTMUniAddressEntity("12th Avenue", "12A");
         var address2 = new MTMUniAddressEntity("18th Avenue", "18B");
         var address3 = new MTMUniAddressEntity("18th Avenue", "132B");
+        session.persist(address1);
+        session.persist(address2);
+        session.persist(address3);
 
-        person1.getList().add(address1);
-        person1.getList().add(address2);
-        person1.getList().add(address3);
-        person2.getList().add(address1);
-        person2.getList().add(address2);
+        ArrayList<MTMUniAddressEntity> list = new ArrayList<>();
+        list.add(address1);
+        list.add(address2);
+        list.add(address3);
+
+        person1.setAddresses(list);
+        person2.setAddresses(list);
 
         session.persist(person1);
         session.persist(person2);
+
+        transaction.commit();
     }
 
 }

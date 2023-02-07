@@ -3,6 +3,8 @@ package org.khasanof.domainModel.associations.manyToMany;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 /**
  * Author: Nurislom
  * <br/>
@@ -16,8 +18,8 @@ import lombok.*;
 @Setter
 @Entity
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "mtm_uni_address_en", schema = "association", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id")
 })
@@ -31,6 +33,9 @@ public class MTMUniAddressEntity {
 
     @Column(name = "`number`")
     private String number;
+
+    @ManyToMany(mappedBy = "addresses")
+    private List<MTMUniPersonEntity> owners;
 
     public MTMUniAddressEntity(String street, String number) {
         this.street = street;

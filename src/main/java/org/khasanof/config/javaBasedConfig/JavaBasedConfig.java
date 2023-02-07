@@ -7,6 +7,8 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 import org.khasanof.domainModel.associations.manyToMany.MTMUniAddressEntity;
 import org.khasanof.domainModel.associations.manyToMany.MTMUniPersonEntity;
+import org.khasanof.domainModel.associations.manyToMany.MTMUniPostEntity;
+import org.khasanof.domainModel.associations.manyToMany.MTMUniTagEntity;
 import org.khasanof.domainModel.associations.manyToOne.MTOPerson;
 import org.khasanof.domainModel.associations.manyToOne.MTOPhone;
 import org.khasanof.domainModel.associations.oneToMany.OTMAccountEntity;
@@ -104,8 +106,8 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(OTOUniPhoneDetailsEntity.class);
         configuration.addAnnotatedClass(OTOBidPhoneDetailsEntity.class);
         configuration.addAnnotatedClass(OTOBidPhoneEntity.class);
-        configuration.addAnnotatedClass(MTMUniAddressEntity.class);
-        configuration.addAnnotatedClass(MTMUniPersonEntity.class);
+        configuration.addAnnotatedClass(MTMUniTagEntity.class);
+        configuration.addAnnotatedClass(MTMUniPostEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

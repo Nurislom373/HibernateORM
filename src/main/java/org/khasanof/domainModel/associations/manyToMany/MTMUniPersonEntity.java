@@ -18,8 +18,8 @@ import java.util.List;
 @Setter
 @Entity
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "mtm_uni_person_en", schema = "association", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id")
 })
@@ -30,9 +30,7 @@ public class MTMUniPersonEntity {
     private Integer id;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<MTMUniAddressEntity> list;
-
-
+    private List<MTMUniAddressEntity> addresses;
 
     // ...
 
