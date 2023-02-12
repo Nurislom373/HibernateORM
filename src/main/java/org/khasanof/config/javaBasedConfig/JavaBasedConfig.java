@@ -11,6 +11,8 @@ import org.khasanof.domainModel.associations.manyToMany.MTMUniPostEntity;
 import org.khasanof.domainModel.associations.manyToMany.MTMUniTagEntity;
 import org.khasanof.domainModel.associations.manyToOne.MTOPerson;
 import org.khasanof.domainModel.associations.manyToOne.MTOPhone;
+import org.khasanof.domainModel.associations.notFoundAnnotation.NFCityEntity;
+import org.khasanof.domainModel.associations.notFoundAnnotation.NFPersonEntity;
 import org.khasanof.domainModel.associations.oneToMany.OTMAccountEntity;
 import org.khasanof.domainModel.associations.oneToMany.OTMEmployeeEntity;
 import org.khasanof.domainModel.associations.oneToMany.OTMPerson;
@@ -108,6 +110,8 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(OTOBidPhoneEntity.class);
         configuration.addAnnotatedClass(MTMUniTagEntity.class);
         configuration.addAnnotatedClass(MTMUniPostEntity.class);
+        configuration.addAnnotatedClass(NFCityEntity.class);
+        configuration.addAnnotatedClass(NFPersonEntity.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
