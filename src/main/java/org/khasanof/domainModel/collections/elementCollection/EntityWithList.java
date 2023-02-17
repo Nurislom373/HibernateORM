@@ -1,8 +1,7 @@
-package org.khasanof.domainModel.collections;
+package org.khasanof.domainModel.collections.elementCollection;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.khasanof.domainModel.associations.manyToMany.MTMUniAddressEntity;
 
 import java.util.List;
 

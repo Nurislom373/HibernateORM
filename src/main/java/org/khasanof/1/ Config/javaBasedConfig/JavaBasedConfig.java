@@ -5,8 +5,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import org.khasanof.domainModel.associations.manyToMany.MTMUniAddressEntity;
-import org.khasanof.domainModel.associations.manyToMany.MTMUniPersonEntity;
 import org.khasanof.domainModel.associations.manyToMany.MTMUniPostEntity;
 import org.khasanof.domainModel.associations.manyToMany.MTMUniTagEntity;
 import org.khasanof.domainModel.associations.manyToOne.MTOPerson;
@@ -29,7 +27,8 @@ import org.khasanof.domainModel.basicValues.formulaAnnotation.Author;
 import org.khasanof.domainModel.basicValues.jdbcTypeCodeAnnotation.JdbcTypeCodeExample;
 import org.khasanof.domainModel.basicValues.temporalAnnotation.TemporalExample;
 import org.khasanof.domainModel.basicValues.timeZoneStorage.TimeZoneStorageExample;
-import org.khasanof.domainModel.collections.EntityWithList;
+import org.khasanof.domainModel.collections.elementCollection.EntityWithList;
+import org.khasanof.domainModel.collections.listArrayType.Event;
 import org.khasanof.domainModel.embeddableValues.componentEmbedded.ComponentEmbeddedExample;
 import org.khasanof.domainModel.embeddableValues.customTypeMapping.CustomTypeMappingExample;
 import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.Country;
@@ -114,6 +113,7 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(NFCityEntity.class);
         configuration.addAnnotatedClass(NFPersonEntity.class);
         configuration.addAnnotatedClass(EntityWithList.class);
+        configuration.addAnnotatedClass(Event.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

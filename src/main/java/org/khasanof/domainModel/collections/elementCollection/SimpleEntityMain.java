@@ -1,4 +1,4 @@
-package org.khasanof.domainModel.collections;
+package org.khasanof.domainModel.collections.elementCollection;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

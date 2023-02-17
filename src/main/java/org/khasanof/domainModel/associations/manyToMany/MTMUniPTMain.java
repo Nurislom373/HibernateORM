@@ -5,7 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
 
-import java.util.LinkedHashSet;
 import java.util.List;
 
 /**

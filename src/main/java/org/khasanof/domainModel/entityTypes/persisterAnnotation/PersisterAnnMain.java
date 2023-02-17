@@ -1,6 +1,5 @@
 package org.khasanof.domainModel.entityTypes.persisterAnnotation;
 
-import jakarta.persistence.Access;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

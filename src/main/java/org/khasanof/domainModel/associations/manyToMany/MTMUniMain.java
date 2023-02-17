@@ -6,7 +6,6 @@ import org.hibernate.Transaction;
 import org.khasanof.config.javaBasedConfig.JavaBasedConfig;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Author: Nurislom
