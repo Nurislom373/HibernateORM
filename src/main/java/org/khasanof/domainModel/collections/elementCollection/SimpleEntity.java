@@ -1,9 +1,7 @@
 package org.khasanof.domainModel.collections.elementCollection;
 
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Author: Nurislom
@@ -18,17 +16,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @Embeddable
+@AllArgsConstructor
+@NoArgsConstructor
 public class SimpleEntity {
-
     private String first;
     private String last;
-
-    public SimpleEntity(String first, String last) {
-        this.first = first;
-        this.last = last;
-    }
-
-    public SimpleEntity() {
-
-    }
 }

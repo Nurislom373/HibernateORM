@@ -29,6 +29,10 @@ import org.khasanof.domainModel.basicValues.temporalAnnotation.TemporalExample;
 import org.khasanof.domainModel.basicValues.timeZoneStorage.TimeZoneStorageExample;
 import org.khasanof.domainModel.collections.elementCollection.EntityWithList;
 import org.khasanof.domainModel.collections.listArrayType.Event;
+import org.khasanof.domainModel.collections.mapCollection.exFirst.MPerson;
+import org.khasanof.domainModel.collections.mapCollection.exSecond.MapOrder;
+import org.khasanof.domainModel.collections.mapCollection.exThrity.MapItem;
+import org.khasanof.domainModel.collections.mapCollection.exThrity.MapSecOrder;
 import org.khasanof.domainModel.embeddableValues.componentEmbedded.ComponentEmbeddedExample;
 import org.khasanof.domainModel.embeddableValues.customTypeMapping.CustomTypeMappingExample;
 import org.khasanof.domainModel.embeddableValues.overridingEmbeddableTypes.Country;
@@ -114,6 +118,10 @@ public class JavaBasedConfig {
         configuration.addAnnotatedClass(NFPersonEntity.class);
         configuration.addAnnotatedClass(EntityWithList.class);
         configuration.addAnnotatedClass(Event.class);
+        configuration.addAnnotatedClass(MPerson.class);
+        configuration.addAnnotatedClass(MapOrder.class);
+        configuration.addAnnotatedClass(MapItem.class);
+        configuration.addAnnotatedClass(MapSecOrder.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();

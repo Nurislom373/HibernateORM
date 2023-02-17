@@ -2,6 +2,7 @@ package org.khasanof.domainModel.collections.elementCollection;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CollectionType;
 
 import java.util.List;
 

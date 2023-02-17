@@ -54,3 +54,36 @@ sekinroq bo'ladi.
 Shuning uchun @ElementCollection o'rniga one-to-many assotsiatsiyani tavsiya qilinadi. Bu bizga lazy load qilishdan
 foydalanish va ushbu qiymatlarni bir-biridan mustaqil ravishda yangilash imkonini beradi. Buning uchun faqat minimal kod
 miqdori talab qilinadi, lekin ancha yaxshi ishlashni ta'minlaydi. 
+
+```java
+@Getter
+@Setter
+@ToString
+@Embeddable
+@AllArgsConstructor
+@NoArgsConstructor
+public class SimpleEntity {
+    private String first;
+    private String last;
+}
+```
+
+```java
+@Entity
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "entity_with_list", schema = "collections")
+public class EntityWithList {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @ElementCollection
+    private List<SimpleEntity> entities;
+
+}
+```
