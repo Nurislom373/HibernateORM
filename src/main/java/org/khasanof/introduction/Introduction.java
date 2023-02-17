@@ -35,7 +35,6 @@ public class Introduction {
                 "the.akbarov", "12344567", LanguageEnums.ENGLISH, StatusEnum.ACTIVE);
 
 
-
         session.persist(user);
         transaction.commit();
     }
