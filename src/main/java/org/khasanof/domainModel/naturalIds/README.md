@@ -1,17 +1,22 @@
 # @NaturalId Annotation
 
-Natural ids represent domain model unique identifiers that have a meaning in the real world too. Even if a natural id
-does not make a good primary key (surrogate keys being usually preferred), it’s still useful to tell Hibernate about it.
-As we will see later, Hibernate provides a dedicated, efficient API for loading an entity by its natural id much like it
-offers for loading by its identifier (PK).
+Hibernate entities have @Id annotation that marks a field primary id for that entity. But sometimes, we may have a field
+in the entity that can uniquely identify the entity, but for some reason, it is not a suitable primary key.
+
+For example, a UserEntity can have id field of long type to uniquely identify the user in that system. At the same time,
+users may have an email that can also uniquely identify the user in the system. But we cannot use the email as the
+primary key because it will be used as a foreign key in many other places and also in link/join tables. Using email in
+these places would not make sense at all.
 
 <hr/>
 
-Biz @NatrualId annotatsiya orqali entity istalgan fieldni unique qilib belgilash uchun ishlatamiz. Hibernate orqali
-@NaturalId annotatsiyasi qo'yilgan field orqali databasedan select qilishimiz mumkin.
+Bizga entityda _id_ boshqa yana unique identifikatori kerak bo'lishi mumkin masalan, _UserEntity_ Long typedagi _id_
+field bor. Shu bilan birga UserEntity ni email ham bo'lishi mumkin. Biz ushbu fieldni ham unique identifikatori sifatida
+belgilashimiz kerak.
+Biz @NatrualId annotatsiya orqali entity istalgan fieldni unique identifikato qilib belgilash uchun ishlatamiz.
+Hibernate sizga entitylarga to'g'ridan to'g'ri identifikatori yoki JPQL yoki SQL query orqali olish imkoni beradi.
 
 ```java
-
 @Entity
 @Getter
 @Setter
@@ -33,7 +38,6 @@ public class NaturalBook {
 Biz @NaturalId faqat oddiy typelarga emas balki embeddable classlarga nisbatan ham qo'llashimiz mumkin.
 
 ```java
-
 @Entity(name = "Book")
 public static class Book {
 
@@ -81,7 +85,6 @@ public static class Isbn implements Serializable {
 ```
 
 ```java
-
 @Entity(name = "Book")
 public static class Book {
 
@@ -141,35 +144,84 @@ Natural Id orqali entitylarni load qilishimiz mumkin.
 
 ```java
 Book book = entityManager
-	.unwrap(Session.class)
-	.byNaturalId(Book.class)
-	.using("isbn", "978-9730228236")
-	.load();
+        .unwrap(Session.class)
+        .byNaturalId(Book.class)
+        .using("isbn","978-9730228236")
+        .load();
 ```
 
 ```java
 Book book = entityManager
-	.unwrap(Session.class)
-	.byNaturalId(Book.class)
-	.using(
-		"isbn",
-		new Isbn("973022823X", "978-9730228236"))
-	.load();
+        .unwrap(Session.class)
+        .byNaturalId(Book.class)
+        .using("isbn", new Isbn("973022823X","978-9730228236"))
+        .load();
 ```
 
 ```java
 Book book = entityManager
-	.unwrap(Session.class)
-	.byNaturalId(Book.class)
-	.using("productNumber", "973022823X")
-	.using("publisher", publisher)
-	.load();
+        .unwrap(Session.class)
+        .byNaturalId(Book.class)
+        .using("productNumber","973022823X")
+        .using("publisher",publisher)
+        .load();
 ```
 
 - `load()` <br/>
   obtains a reference to the entity, making sure that the entity state is initialized.
 - `getReference()` <br/>
-  obtains a reference to the entity. The state may or may not be initialized. If the entity is already associated with 
-  the current running Session, that reference (loaded or not) is returned. If the entity is not loaded in the current 
-  Session and the entity supports proxy generation, an uninitialized proxy is generated and returned, otherwise the 
+  obtains a reference to the entity. The state may or may not be initialized. If the entity is already associated with
+  the current running Session, that reference (loaded or not) is returned. If the entity is not loaded in the current
+  Session and the entity supports proxy generation, an uninitialized proxy is generated and returned, otherwise the
   entity is loaded from the database and returned.
+
+!Note <br/>
+Hibernate @NaturalId annotatsiyasi qo'yilgan field default immutable bo'ladi ya'ni biz uni o'zgartira olmaymiz. Mutable
+qilishimiz uchun.
+
+```java
+@Entity(name = "Author")
+public static class Author {
+
+    @Id
+    private Long id;
+
+    private String name;
+
+    @NaturalId(mutable = true)
+    private String email;
+
+    //Getters and setters are omitted for brevity
+}
+```
+
+Within the Session, Hibernate maintains a mapping from natural id values to entity identifiers (PK) values. If natural
+ids values changed, it is possible for this mapping to become out of date until a flush occurs.
+
+To work around this condition, Hibernate will attempt to discover any such pending changes and adjust them when the
+load() or getReference() methods are executed. To be clear: this is only pertinent for mutable natural ids.
+
+```java
+Author author = entityManager
+	.unwrap(Session.class)
+	.bySimpleNaturalId(Author.class)
+	.load("john@acme.com");
+
+author.setEmail("john.doe@acme.com");
+
+assertNull(
+	entityManager
+		.unwrap(Session.class)
+		.bySimpleNaturalId(Author.class)
+		.setSynchronizationEnabled(false)
+		.load("john.doe@acme.com")
+);
+
+assertSame(author,
+	entityManager
+		.unwrap(Session.class)
+		.bySimpleNaturalId(Author.class)
+		.setSynchronizationEnabled(true)
+		.load("john.doe@acme.com")
+);
+```
