@@ -131,7 +131,7 @@ public class JavaBasedConfig {
         return configuration.buildSessionFactory(registry);
     }
 
-    private static Properties getProperties() {
+    public static Properties getProperties() {
         Properties properties = new Properties();
         properties.setProperty(Environment.DRIVER, DRIVER);
         properties.setProperty(Environment.URL, URL);
